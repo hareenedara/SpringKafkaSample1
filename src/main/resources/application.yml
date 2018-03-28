@@ -1,0 +1,17 @@
+broker:
+   servers: icpcdc200015:11101
+
+topic:
+   sourceName: csvtopic
+   targetName: jsontopic
+   exceptionsTopicName: exceptions
+   consumer:
+      groupId: springGroup
+      count: 4
+      timeoutMs: 10000
+
+converter:
+    json:
+        model: com.samples.model.IrInvoice
+    csv:
+        headers: client_eci,invoice_status,payer_id,payer_id_type,payer_alt_id,payer_alt_id_type,invoice_ref,invoice_ref_type,invoice_ref2,invoice_ref_type2,invoice_due_date,invoice_issue_date,statement_id,alt_ref_id,alt_ref_id2,currency_code,cash_final_amount,cash_sales_tax_amount,cash_discount_amount,cash_discount_days

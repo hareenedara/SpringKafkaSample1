@@ -1,0 +1,13 @@
+---
+applications:
+- name: SpringKafkaSample1
+  memory: 1GB
+  instances: 1
+  path: build/libs/SpringKafkaSample1-1.0-SNAPSHOT.jar
+  buildpack: java_buildpack_beta
+  env:
+    JAVA_VERSION: 1.8.0_+
+  services:
+  - BB-LogAas
+  env:
+    SPRING_PROFILES_ACTIVE: default

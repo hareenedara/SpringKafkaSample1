@@ -1,0 +1,36 @@
+buildscript {
+    repositories {
+
+        maven { url "http://repo-proxy.jpmchase.net/maven/content/groups/jpmc-public" }
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+
+    }
+}
+
+
+group 'com.samples'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+
+    maven { url "http://repo-proxy.jpmchase.net/maven/content/groups/jpmc-public" }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-actuator'
+    compile 'org.springframework.kafka:spring-kafka:+'
+    compile 'org.apache.kafka:kafka-clients:+'
+    compile 'org.apache.commons:commons-lang3:+'
+}
